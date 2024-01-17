@@ -40,6 +40,7 @@ import -----
  df = pd.read_csv("C:/Users/user/Desktop/Downloads/Mall_Customers.csv")
  df.describe().transpose()
 ```
+```
 	CustomerID	Age	Annual Income (k$)	Spending Score (1-100)
 count	200.000000	200.000000	200.000000	200.000000
 mean	100.500000	38.850000	60.560000	50.200000
@@ -49,6 +50,7 @@ min	1.000000	18.000000	15.000000	1.000000
 50%	100.500000	36.000000	61.500000	50.000000
 75%	150.250000	49.000000	78.000000	73.000000
 max	200.000000	70.000000	137.000000	99.000000
+```
 
 
 2). Histogram plots for each of the numerical variables.
