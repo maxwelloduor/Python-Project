@@ -1,11 +1,11 @@
 # Mall Customer-Segmentation and Clustering
 ## Introduction :
-Customer Segmentation is the process of division of customer base into several groups of individuals that share a similarity in different ways that are relevant to marketing such as gender, age, interests, and miscellaneous spending habits.
+Customer Segmentation is the process of division of A customer base into several groups of individuals that share a similarity in different ways that are relevant to marketing such as gender, age, interests, and miscellaneous spending habits.
 We will make use of K-means clustering which is the essential algorithm for clustering unlabeled dataset.
 
-My aim is to cluster the given dataset into distinct target market groups and analyze the obtained target groups.This is in a bid to gain insight on target markets that may potentially lead to increased product sales at the mall when advertised to.
+Our aim is to cluster the given dataset into distinct target market groups and analyze the obtained target groups.This is in a bid to gain insight on target markets that may potentially lead to increased product sales at the mall when advertised to.
 
-I shall carry out my analysis using the 'Python Programming Language' on the Jupyter Notebook IDE.
+We shall carry out my analysis using the 'Python Programming Language' on the Jupyter Notebook IDE.
 
 ## Dataset Overview
 The dataset is aquired from kaggle and the link is given below :
@@ -14,15 +14,15 @@ https://www.kaggle.com/nelakurthisudheer/mall-customer-segmentation
 
 The dataset consists of following five features of 200 customers:
 
-  CustomerID: Unique ID assigned to the customer
+- CustomerID: Unique ID assigned to the customer
 
-  Gender: Gender of the customer
+- Gender: Gender of the customer
 
-  Age: Age of the customer
+- Age: Age of the customer
 
-  Annual Income (k$): Annual Income of the customer
+- Annual Income (k$): Annual Income of the customer
 
-  Spending Score (1-100): Score assigned by the mall based on customer behavior and spending nature.
+- Spending Score (1-100): Score assigned by the mall based on customer behavior and spending nature.
 
 
 
