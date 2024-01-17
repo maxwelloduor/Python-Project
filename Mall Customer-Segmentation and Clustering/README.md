@@ -5,7 +5,7 @@ We will make use of K-means clustering which is the essential algorithm for clus
 
 Our aim is to cluster the given dataset into distinct target market groups and analyze the obtained target groups.This is in a bid to gain insight on target markets that may potentially lead to increased product sales at the mall when advertised to.
 
-We shall carry out my analysis using the 'Python Programming Language' on the Jupyter Notebook IDE.
+We shall carry out our analysis using the 'Python Programming Language' on the Jupyter Notebook IDE.
 
 ## Dataset Overview
 The dataset is aquired from kaggle and the link is given below :
@@ -22,14 +22,7 @@ The dataset consists of following five features of 200 customers:
 
 - Annual Income (k$): Annual Income of the customer
 
-- Spending Score (1-100): Score assigned by the mall based on customer behavior and spending nature.
-
-
-
-
-
-Code: pd.isnull(df).sum()
-Obtained information about the dataset.The dataset has a total of 5 columns and 200 records.In addittion, by running the code, I was able to know the column names and the data types of data values in each column.
+- Spending Score (1-100): Score assigned by the mall based on customer behavior and spending nature
 
 
 Univariate Analysis
