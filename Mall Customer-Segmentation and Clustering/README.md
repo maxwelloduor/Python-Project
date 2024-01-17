@@ -1,4 +1,5 @@
-Introduction
+#Mall Customer-Segmentation and Clustering
+##Introduction :
 In this project, a clean and transformed 'Mall_Customers Dataset' obtained from a shopping mall's database is presented.
 
 My aim is to cluster the given dataset into distinct target market groups and analyze the obtained target groups.This is in a bid to gain insight on target markets that may potentially lead to increased product sales at the mall when advertised to.
