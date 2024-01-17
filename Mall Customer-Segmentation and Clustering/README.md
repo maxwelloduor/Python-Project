@@ -24,21 +24,40 @@ The dataset consists of following five features of 200 customers:
 
 - Spending Score (1-100): Score assigned by the mall based on customer behavior and spending nature
 
+# Steps for Implementation
 
-Univariate Analysis
-1). For starters,I obtained the descriptive statistics of the dataset variables.
+-import all necessary packages
 
-Code: df.describe().transpose()
+```
+import ----- from ------
+import -----
+```
 
-Output: count mean std min 25% 50% 75% max
+## Univariate Analysis
+1). For starters,We load the dataset and obtain the descriptive statistics of the dataset variables.
 
-CustomerID 200.0 100.50 57.879185 1.0 50.75 100.5 150.25 200.0
+```
+ df = pd.read_csv("C:/Users/user/Desktop/Downloads/Mall_Customers.csv")
+ df.describe().transpose()
+```
+	      CustomerID	   Age	      Annual Income (k$) 	Spending Score (1-100)
+ 
+-count	200.000000	  200.000000	   200.000000	      200.000000
 
-Age 200.0 38.85 13.969007 18.0 28.75 36.0 49.00 70.0
+-mean	  100.500000	  38.850000	     60.560000	      50.200000
 
-Annual Income (k$) 200.0 60.56 26.264721 15.0 41.50 61.5 78.00 137.0
+-std	  57.879185	    13.969007	     26.264721	      25.823522
 
-Spending Score (1-100) 200.0 50.20 25.823522 1.0 34.75 50.0 73.00 99.0
+-min	  1.000000	    18.000000	     15.000000	      1.000000
+
+-25%	  50.750000   	28.750000    	 41.500000	      34.750000
+
+-50%	  100.500000	  36.000000	     61.500000	      50.000000
+
+-75%	  150.250000	  49.000000	     78.000000	      73.000000
+
+-max	  200.000000	  70.000000	     137.000000	      99.000000
+
 
 2). Histogram plots for each of the numerical variables.
 
