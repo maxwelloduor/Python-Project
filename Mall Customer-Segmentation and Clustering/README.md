@@ -1,7 +1,7 @@
 # Mall Customer-Segmentation and Clustering
 ## Introduction :
 Customer Segmentation is the process of dividing a customer base into several groups of individuals that share a similarity in different ways that are relevant to marketing such as gender, age, interests, and miscellaneous spending habits.
-We will make use of K-means clustering which is the essential algorithm for clustering unlabeled dataset.
+We will make use of K-means clustering which is the essential algorithm for clustering unlabelled datasets.
 
 Our aim is to cluster the given dataset into distinct target market groups and analyze the obtained target groups.This is in a bid to gain insight on target markets that may potentially lead to increased product sales at the mall when advertised to.
 
