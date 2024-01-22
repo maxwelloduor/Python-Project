@@ -53,35 +53,38 @@ max	200.000000	70.000000	137.000000	99.000000
 ```
 
 
-2). Histogram plots for each of the numerical variables.
+2). Plots for each of the numerical variables.
 
 Code:
 ```
 
-columns=['CustomerID', 'Age', 'Annual Income (k$)']
+columns =  ['Age', 'Annual Income (k$)','Spending Score (1-100)']
 
 for i in columns:
 
-plt.figure()
-
-sns.distplot(df[i])
+    sns.kdeplot(data = df, x=i, shade = True, hue = df['Gender'])
 
 ```
 
 Insights:
 
-The 'CustomerID' Histogram confirms and displays that our dataset contains 200 customers.
 
 ![download](https://github.com/maxwelloduor/Python-Project/assets/137492526/1aab6f44-2968-4b1d-bb75-b9339d92f0dd)
 
 
-From the 'Annual Income' Histogram, I observed that the age range of the customers is between 18-69 whereby most customers are in the age range 18-52.
+From the 'Age' kde plot, I observed that the age range of the customers is between 18-69 whereby most customers are in the age range 18-52. The female customers are more in number within the age range of about 18 to 58.In the 0-18 and 58-80 age ranges,the male gender customers are more in number.
 
-image
 
-From the 'Annual Income' Histogram,I observed that most of the customers lie between the 50k-80k annual income range while the total range lies between 18k to 52k.
+![data3](https://github.com/maxwelloduor/Python-Project/assets/137492526/5a0d8942-36e2-40a7-85e4-2bfc7574f0c2)
 
-image
+
+From the 'Annual Income' kde plot,I observed that most of the customers lie between the 50k-80k annual income range while the total range lies between 18k to 52k.The female customers earn more annual income than the male customers within the income range 0-130k while in the 130-150k range the male customers outshine the female customers.
+
+
+![data](https://github.com/maxwelloduor/Python-Project/assets/137492526/ec809f11-d51c-4d28-b1e2-6a9edd9b98e2)
+
+From the visualization you can tell that female customers have a significantly higher spending score as compared to their male counterparts.
+
 
 3). KDE Plots for each of the numerical variables,categorized by gender.
 
