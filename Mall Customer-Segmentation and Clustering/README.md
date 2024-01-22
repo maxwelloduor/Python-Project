@@ -123,6 +123,15 @@ df['Gender'].value_counts(normalize=True)
 
 ```
 
+```
+
+Gender
+Female    0.56
+Male      0.44
+Name: proportion, dtype: float64
+
+```
+
 The female customers outnumber the male customers by a 12% differnce.
 
 
