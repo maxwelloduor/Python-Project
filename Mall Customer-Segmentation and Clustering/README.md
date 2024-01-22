@@ -86,36 +86,12 @@ From the 'Annual Income' kde plot,I observed that most of the customers lie betw
 From the visualization you can tell that female customers have a significantly higher spending score as compared to their male counterparts.
 
 
-3). KDE Plots for each of the numerical variables,categorized by gender.
-
-Code:
-
-columns = ['Age', 'Annual Income (k$)','Spending Score (1-100)']
-
-for i in columns:
-
-plt.figure()
-
-sns.kdeplot(df[i],shade=True,hue=df['Gender'])
-
-Insights:
-
-From the Ist visualization, the female customers are more in number within the age range of about 18 to 58.In the 0-18 and 58-80 age ranges,the male gender customers are more in number.
-
-image
-
-In the 2nd visualization, the female customers earn more annual income than the male customers within the income range 0-130k while in the 130-150k range the male customers outshine the female customers.
-
-image
-
-Generally, female customers have a significantly higher spending score as compared to their male counterparts.
-
-image
 
 4). Boxplots for each numerical variable(categorized by gender).
 
 Code:
 
+```
 columns = ['Age', 'Annual Income (k$)','Spending Score (1-100)']
 
 for i in columns:
@@ -124,29 +100,35 @@ plt.figure()
 
 sns.boxplot(data=df,x='Gender',y=df[i])
 
-From the boxplots,we can observe that there are barely any outliers in the dataset variables.
+```
 
-image
+From the boxplots, I was looking for outliers. I observed that there  is one outliers in the 'Annual income' visualizaton.
 
-image
 
-image
+![data4](https://github.com/maxwelloduor/Python-Project/assets/137492526/b4958515-18db-4994-891a-0be1a41a5f77)
+
+
+
+![data5](https://github.com/maxwelloduor/Python-Project/assets/137492526/b063a14d-0d65-429c-b007-a7e608ad1033)
+
+
+![data6](https://github.com/maxwelloduor/Python-Project/assets/137492526/e8401067-a796-4b1b-8a14-44cea51f12a0)
+
 
 5). Number of male and female customers in % form.
 
-Code: df['Gender'].value_counts(normalize=True)
+```
 
-It is clear to see that the female customers outnumber the male customers by 12%.
+df['Gender'].value_counts(normalize=True)
 
-Output:
+```
 
-Female 0.56
+The female customers outnumber the male customers by a 12% differnce.
 
-Male 0.44
 
-Name: Gender, dtype: float64
+## Bivariate Analysis.
 
-Bivariate Analysis.
+
 1). Scatter plot to show the relationship between 'Annual Income and 'Spending score'.
 
 From the visualization, I observed that the two variables have a non-linear realtionship.
