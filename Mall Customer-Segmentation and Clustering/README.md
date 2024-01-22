@@ -8,7 +8,7 @@ My aim is to cluster the given dataset into distinct target market groups and an
 I will carry out my analysis using the 'Python Programming Language' on the Jupyter Notebook IDE.
 
 ## Dataset Overview
-The dataset is aquired from kaggle and the link is given below :
+The dataset is acquired from kaggle and the link is given below :
 
 https://www.kaggle.com/nelakurthisudheer/mall-customer-segmentation
 
