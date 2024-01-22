@@ -102,7 +102,7 @@ sns.boxplot(data=df,x='Gender',y=df[i])
 
 ```
 
-From the boxplots, I was looking for outliers. I observed that there  is one outliers in the 'Annual income' visualizaton.
+I was looking for outliers, and from the boxplots, I observed that there  is one outliers in the 'Annual income' visualizaton.
 
 
 ![data4](https://github.com/maxwelloduor/Python-Project/assets/137492526/b4958515-18db-4994-891a-0be1a41a5f77)
@@ -187,28 +187,71 @@ df.groupby(['Gender'])['Age', 'Annual Income (k$)','Spending Score (1-100)'].mea
 
 Output:
 
-                Age	       Annual Income (k$)	   Spending Score (1-100)
+                  Age	         Annual Income (k$)	   Spending Score (1-100)
 
      Gender
 
-     Female	38.098214	      59.250000	           51.526786
+     Female	 38.098214	      59.250000	             51.526786
 
      Male	 39.806818	      62.227273	             48.511364
 
 Although male customers have an averagely higher income though they spend less in comparision to female customers.
 
 
-5). Heatmap to display the correlation between variables.
 
-To read the visualization, -1>x>0 indicates a negative correlatio between the variables while 0>x<1 indicates a positive correlation between the variables.
+## Univariate Clustering.
 
-image
+### K-means Algorithm
 
-Univariate Clustering.
-i) For loop to determine the intertia scores for clusters between the range of 1-11.
+--We specify the number of clusters that we need to create.
+
+--The algorithm selects k objects at random from the dataset. This object is the initial cluster or mean.
+
+--The closest centroid obtains the assignment of a new observation. We base this assignment on the 
+
+Euclidean Distance between object and the centroid.
+
+--k clusters in the data points update the centroid through calculation of the new mean values present in 
+
+all the data points of the cluster. The kth cluster’s centroid has a - - Length of p that contains means 
+
+of all variables for observations in the k-th cluster. We denote the number of variables with p.
+
+--Iterative minimization of the total within the sum of squares. Then through the iterative minimization 
+
+of the total sum of the square, the assignment stop wavering when we - - Achieve maximum iteration. The 
+
+default value is 10 that the R software uses for the maximum iterations.
+
+
+### Determining Optimal Clusters
+
+While working with clusters, you need to specify the number of clusters to use. You would like to utilize 
+
+the optimal number of clusters. To help you in determining the optimal clusters, there are three popular 
+
+methods –
+
+-- Elbow method The main goal behind cluster partitioning methods like k-means is to define the clusters 
+
+such that the intra-cluster variation stays minimum.
+
+minimize(sum W(Ck)), k=1…k
+
+
+Where Ck represents the kth cluster and W(Ck) denotes the intra-cluster variation. With the measurement 
+
+of the total intra-cluster variation, one can evaluate the compactness of the clustering boundary. We can 
+
+then proceed to define the optimal clusters as follows –
+
+First, we calculate the clustering algorithm for several values of k. This can be done by creating a 
+
+variation within k from 1 to 10 clusters. We then calculate the total intra-cluster sum of square (iss).
 
 Code:
 
+```
 intertia_scores=[]
 
 for i in range(1,11):
@@ -218,13 +261,21 @@ kmeans=KMeans(n_clusters=i)
 kmeans.fit(df[['Annual Income (k$)']])
 
 intertia_scores.append(kmeans.inertia_)
-ii) Plot the intertia scores to obtain the most suitable cluster number,this is through the elbow method.
 
-From the plot, I determined the appropriate lot size to be 3.
+```
 
-Code: plt.plot(range(1,11),intertia_scores)
+Then, we proceed to plot iss based on the number of k clusters. This plot denotes the appropriate number 
 
-image
+of clusters required in our model. In the plot, the location of a bend or a knee is the indication of the 
+
+optimum number of clusters.
+
+Code:
+
+```
+ plt.plot(range(1,11),intertia_scores)
+```
+
 
 iii) Initiate my algorithm.
 
