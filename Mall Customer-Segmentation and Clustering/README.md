@@ -102,7 +102,7 @@ sns.boxplot(data=df,x='Gender',y=df[i])
 
 ```
 
-I was looking for outliers, and from the boxplots, I observed that there  is one outliers in the 'Annual income' visualizaton.
+I was looking for outliers, and from the boxplots, I observed that there  is one outlier in the 'Annual income' visualizaton.
 
 
 ![data4](https://github.com/maxwelloduor/Python-Project/assets/137492526/b4958515-18db-4994-891a-0be1a41a5f77)
@@ -203,21 +203,21 @@ Although male customers have an averagely higher income though they spend less i
 
 ### K-means Algorithm
 
---We specify the number of clusters that we need to create.
+- We specify the number of clusters that we need to create.
 
---The algorithm selects k objects at random from the dataset. This object is the initial cluster or mean.
+- The algorithm selects k objects at random from the dataset. This object is the initial cluster or mean.
 
---The closest centroid obtains the assignment of a new observation. We base this assignment on the 
+- The closest centroid obtains the assignment of a new observation. We base this assignment on the 
 
 Euclidean Distance between object and the centroid.
 
---k clusters in the data points update the centroid through calculation of the new mean values present in 
+- k clusters in the data points update the centroid through calculation of the new mean values present in 
 
 all the data points of the cluster. The kth cluster’s centroid has a - - Length of p that contains means 
 
 of all variables for observations in the k-th cluster. We denote the number of variables with p.
 
---Iterative minimization of the total within the sum of squares. Then through the iterative minimization 
+- Iterative minimization of the total within the sum of squares. Then through the iterative minimization 
 
 of the total sum of the square, the assignment stop wavering when we - - Achieve maximum iteration. The 
 
