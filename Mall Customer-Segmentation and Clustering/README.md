@@ -1,11 +1,11 @@
 # Mall Customer-Segmentation and Clustering
 ## Introduction :
 Customer Segmentation is the process of dividing a customer base into several groups of individuals that share a similarity in different ways that are relevant to marketing such as gender, age, interests, and miscellaneous spending habits.
-We will make use of K-means clustering which is the essential algorithm for clustering unlabelled datasets.
+I will make use of K-means clustering which is an essential algorithm for clustering unlabelled datasets.
 
-Our aim is to cluster the given dataset into distinct target market groups and analyze the obtained target groups.This is in a bid to gain insight on target markets that may potentially lead to increased product sales at the mall when advertised to.
+My aim is to cluster the given dataset into distinct target market groups and analyze the obtained target groups.This is in a bid to gain insight on target markets that may potentially lead to increased product sales at the mall when advertised to.
 
-We shall carry out our analysis using the 'Python Programming Language' on the Jupyter Notebook IDE.
+I will carry out my analysis using the 'Python Programming Language' on the Jupyter Notebook IDE.
 
 ## Dataset Overview
 The dataset is aquired from kaggle and the link is given below :
@@ -34,7 +34,7 @@ import -----
 ```
 
 ## Univariate Analysis
-1). For starters,We load the dataset and obtain the descriptive statistics of the dataset variables.
+1). For starters, I loaded the dataset and obtained the descriptive statistics of the dataset variables.
 
 ```
  df = pd.read_csv("C:/Users/user/Desktop/Downloads/Mall_Customers.csv")
@@ -56,6 +56,7 @@ max	200.000000	70.000000	137.000000	99.000000
 2). Histogram plots for each of the numerical variables.
 
 Code:
+```
 
 columns=['CustomerID', 'Age', 'Annual Income (k$)']
 
@@ -65,11 +66,14 @@ plt.figure()
 
 sns.distplot(df[i])
 
+```
+
 Insights:
 
 The 'CustomerID' Histogram confirms and displays that our dataset contains 200 customers.
 
-image
+![download](https://github.com/maxwelloduor/Python-Project/assets/137492526/1aab6f44-2968-4b1d-bb75-b9339d92f0dd)
+
 
 From the 'Annual Income' Histogram, I observed that the age range of the customers is between 18-69 whereby most customers are in the age range 18-52.
 
