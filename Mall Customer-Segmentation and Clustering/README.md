@@ -1,4 +1,4 @@
-# Mall Customer-Segmentation and Clustering
+
 ## Introduction :
 Customer Segmentation is the process of dividing a customer base into several groups of individuals that share a similarity in different ways that are relevant to marketing such as gender, age, interests, and miscellaneous spending habits.
 I will make use of K-means clustering which is an essential algorithm for clustering unlabelled datasets.
@@ -276,64 +276,44 @@ Code:
  plt.plot(range(1,11),intertia_scores)
 ```
 
+![data8](https://github.com/maxwelloduor/Python-Project/assets/137492526/72f94337-c81a-4936-aefa-6282285424d1)
 
-iii) Initiate my algorithm.
+I then initiated and fitted  the algorith and added an 'Income Cluster' column that contains clustered data values to the existing dataset.
 
-Code: clustering1 = KMeans(n_clusters=3)
-iv) Fit my algorithm into the data.
+```
+ clustering1 = KMeans(n_clusters=3)
 
-Code: clustering1.fit(df[['Annual Income (k$)']])
-v) Add an 'Income Cluster' column that contains clustered data values to the existing dataset.
+ clustering1.fit(df[['Annual Income (k$)']])
 
-Code 1: df['Income Cluster'] = clustering1.labels and Code 2: df.head()
+ df['Income Cluster'] = clustering1.labels
 
-Output:
+df.head()
+```
+```
+	CustomerID	Gender	  Age	Annual Income (k$)	Spending Score (1-100)	Income Cluster
+0	1	          Male	  19	     15	                   39	                 1
+1	2	          Male    21         15	                   81                    1
+2	3	          Female  20	     16                	   6	                 1
+3	4	          Female  23	     16	                   77	                 1
+4	5	          Female  31	     17                    40	                 1
 
-Gender	  Age	    Annual Income (k$)	Spending Score (1-100)	Income Cluster
-0 Male 19 15 39 0
+```
 
-1 Male 21 15 81 0
+### Bivariate Clustering.
+i). Initiate the KMeans clustering algorithm
 
-2 Female 20 16 6 0
+- fit the data values
 
-3 Female 23 16 77 0
+- label the obtained clusters
 
-4 Female 31 17 40 0
+- create new column
 
-vi) Obtain the number of data values in each cluster.
-
-Code: df['Income Cluster'].value_counts()
-
-Output:
-
-- The **'1' cluster** has the largest number of customers i.e **92**.
-
-- The **'0' cluster** has the second largest number of customers i.e **72**.
-
-- The **'2'** cluster has the least number of customers i.e **36**.
-vii) Summary statistics of the clusters obtained.
-
-The income cluster 2 has the highest level of annual income in addittion to the highest spending score.
-
-Code: df.groupby('Income Cluster')['Age', 'Annual Income (k$)','Spending Score (1-100)'].mean()
-
-Output:
-
-                Age	Annual Income (k$)	Spending Score (1-100)
-
- Income Cluster
-
-               0	38.930556	33.027778	50.166667
-
-               1	39.184783	66.717391	50.054348
-
-                2	37.833333	99.888889	50.638889
-Bivariate Clustering.
-i). Initiate the KMeans clustering algorithm,fit the data values,label the obtained clusters, create new column,obtain dataset overview.
+- obtain dataset overview.
 
 Code:
 
-clustering2 = KMeans(n_clusters=5)
+```
+clustering2 = KMeans()
 
 clustering2.fit(df[['Annual Income (k$)','Spending Score (1-100)']])
 
@@ -341,24 +321,24 @@ df['Spending and Income Cluster'] =clustering2.labels_
 
 df.head()
 
+```
 Output:
 
-  Gender	       Age	    Annual Income (k$)	  Spending Score (1-100)	Income Cluster	Spending and Income Cluster
+```
+  CustomerID	Gender	  Age	  Annual Income (k$)	Spending Score (1-100)	Income Cluster	Spending and Income Cluster
+0	1	Male	  19	   15	                  39	                   1	          4
+1	2	Male	  21	   15	                  81	                   1	          1
+2	3	Female	  20	   16	                  6	                   1	          4
+3	4	Female	  23	   16	                  77	                   1	          1
+4	5	Female	  31	   17	                  40	                   1	          4
 
-0	Male	        19	            15	                      39	               0	                       4
-
-1	Male	        21	             15	                      81	                0	                       3
-
-2	Female	      20	             16	                      6                  	0	                       4
-
-3	Female	      23	             16                       77                 	0	                        3
-
-4	Female	      31	             17                        40	                 0	                       4
-ii). Obtain the appropriate number of clusters for the dataset using the elbow method.
+```                       
+To obtain the appropriate number of clusters for the dataset, I used the elbow method.
 
 From the plot,I was able to obtain that the suitable number of clusters is 5.
 
 Code:
+```
 
 intertia_scores2=[]
 
@@ -372,27 +352,34 @@ intertia_scores2.append(kmeans2.inertia_)
 
 plt.plot(range(1,11),intertia_scores2)
 
-image
+```
 
-iii). Scatter plot to display the relationship between the 'Spending score' and 'Annual Income' in reference to clusters.
+![data9](https://github.com/maxwelloduor/Python-Project/assets/137492526/bf772642-451f-4f62-b68a-0eca1d51facf)
 
-Code 1:
 
-centers =pd.DataFrame(clustering2.cluster_centers_)
+From the plot,I was able to obtain that the suitable number of clusters is 5.
 
-centers.columns = ['x','y']
 
-Code 2:
+A scatter plot to display the relationship between the 'Spending score' and 'Annual Income' with respect to Spending and Income Cluster
 
-plt.figure(figsize=(10,8))
+Code :
+```
+centers = pd.DataFrame(clustering2.cluster_centers_)
 
-plt.scatter(x=centers['x'],y=centers['y'],s=100,c='black',marker='*')
+centers.columns = ['x', 'y']
 
-sns.scatterplot(data=df, x ='Annual Income (k$)',y='Spending Score (1-100)',hue='Spending and Income Cluster',palette='tab10')
+plt.figure(figsize = (10,8))
 
-plt.savefig('clustering_bivaraiate.png')
+plt.scatter(x = centers['x'], y = centers['y'], s = 100, c = 'black', marker = '*')
 
-image
+sns.scatterplot(data = df, x = 'Annual Income (k$)', y = 'Spending Score (1-100)', hue = 'Spending and
+
+Income Cluster', palette = 'tab10')
+
+```
+
+
+
 
 iv) Compare the male and female gender by the 'Spending and Income Cluster'.
 
