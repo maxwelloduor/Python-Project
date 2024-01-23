@@ -378,49 +378,50 @@ Income Cluster', palette = 'tab10')
 
 ```
 
+![data10](https://github.com/maxwelloduor/Python-Project/assets/137492526/5bac1410-e92d-42d3-ace3-b1da95b6c158)
 
 
 
-iv) Compare the male and female gender by the 'Spending and Income Cluster'.
+I Compared the  genders to their 'Spending and Income Cluster'.
 
-Code: pd.crosstab(df['Spending and Income Cluster'],df['Gender'],normalize='index')
+Code:
+```
+pd.crosstab(df['Spending and Income Cluster'], df['Gender'], normalize = 'index')
+```
+Output:
+```
+                                   Gender	Female	        Male
+Spending and Income Cluster		
+0	                                         0.538462	0.461538
+1	                                         0.608696	0.391304
+2	                                         0.457143	0.542857
+3	                                         0.590909	0.409091
+4	                                         0.592593	0.407407
+```
 
+I then grouped the variables by their 'Spending and Income' Clusters.
+
+Code: 
+```
+df.groupby('Spending and Income Cluster')['Age', 'Annual Income (k$)','Spending Score (1-100)'].mean()
+```
 Output:
 
-                Gender	     Female       	Male
-Spending and Income Cluster
+```
 
-        0                       0.592593	      0.407407
-     
-        1	                     0.538462	      0.461538
-      
-        2	                     0.457143	      0.542857
-      
-        3	                     0.590909	      0.409091
-      
-        4	                     0.608696	      0.391304
-v). Group the variables by the 'Spending and Income' Cluster.
+	                             Age	  Annual Income (k$)	Spending Score (1-100)
+Spending and Income Cluster			
+0	                             32.692308	    86.538462	         82.128205
+1	                             45.217391	    26.304348	         20.913043
+2	                             41.114286	    88.200000	         17.114286
+3	                             25.272727	    25.727273	         79.363636
+4	                             42.716049	    55.296296	         49.518519
+```
 
-Code: df.groupby('Spending and Income Cluster')['Age', 'Annual Income (k$)','Spending Score (1-100)'].mean()
+#### Reccommendations Obtained From The Project.
+The aim of the project was to identify the best target customer group(s) in order for the marketing team to plan the best optimal strategy that ought to increase the mall's product sales.
 
-Output:
-
-                                    Age	         Annual Income (k$)	      Spending Score (1-100)
-Spending and Income Cluster
-
-        0	                        42.716049	         55.296296	                49.518519
-
-        1	                        32.692308	          86.538462                	82.128205
-
-        2	                         41.114286	        88.200000	                 17.114286
-
-        3	                         25.272727	         25.727273	                79.363636
-
-        4	                         45.217391	         26.304348	                 20.913043
-Reccommendations Obtained From The Project.
-The aim of the project is to identify the best target customer group(s) in order for the marketing team to plan the best optimal strategy that ought to increase the mall's product sales.
-
-Following my analysis above,my reccommendations are as follows:
+Following my analysis, my reccommendations are as follows:
 
 1). The best target customer group is: Cluster 1.
 
